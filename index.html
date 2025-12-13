@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Food Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="aboutus.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Enjoy Food Delivery">
+  <meta name="keyword"
+    content="foodpanda now delivers food and grocery in Yangon. Choose from top restaurants in Yangon and order in a flash!">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="signup.html"> -->
+</head>
+
+<body>
+  <!-- nav bar -->
+  <nav class="navbar navbar-expand-lg" style="background: linear-gradient(135deg, #f1cece, #ebdeda);">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#" style="font-size: 30px; font-weight: 800; color:#ff1493;">
+        Food Delivery
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="aboutus.html">About Us</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+              Menu
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Fried Chicken</a></li>
+              <li><a class="dropdown-item" href="#">Milk Tea</a></li>
+              <li><a class="dropdown-item" href="#">Thai Food</a></li>
+              <li><a class="dropdown-item" href="#">Korean Food</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Other Food</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link text-white" href="signup.html">Sign Up</a></li>
+          <!-- <li class="nav-item position-relative">
+            <a class="nav-link text-white" href="#">
+              🛒 Cart
+              <span id="cart-count" class="cart-badge">0</span>
+            </a>
+          </li> -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link text-white dropdown-toggle position-relative" href="#" id="cartDropdown" role="button"
+              data-bs-toggle="dropdown">
+
+              🛒 Cart
+              <span id="cart-count" class="cart-badge">0</span>
+            </a>
+
+            <!-- Cart Box -->
+            <ul class="dropdown-menu dropdown-menu-end p-0" style="min-width:300px;">
+
+              <li class="dropdown-header text-center fw-bold">
+                Your Cart
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <!-- ITEMS (JS က ဒီထဲထည့်မယ်) -->
+              <li>
+                <div id="cart-items" class="px-3">
+                  <p class="text-muted text-center">No items in cart</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <!-- TOTAL -->
+              <li class="px-3 text-end">
+                <strong>Total: <span id="cart-total">0</span> MMK</strong>
+              </li>
+
+              <li class="px-3 mt-2 mb-2">
+                <button class="btn btn-danger btn-sm w-100">Checkout</button>
+              </li>
+
+            </ul>
+          </li>
+
+
+
+        </ul>
+
+        <!-- Search Box -->
+        <div class="position-relative">
+          <input id="searchInput" class="form-control" type="search" placeholder="Search food...">
+          <div id="searchResult" class="search-box"></div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- end nav bar -->
+
+
+
+  <!-- slider start -->
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="image/Flat design bakery shop sale banner template _ Free Vector.jfif" class="d-block w-100"
+          alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/download (2).jfif" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/download (3).jfif" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- slider end -->
+
+  <!-- start menu section -->
+
+  <main>
+    <section>
+      <div class="wrapper p-top">
+        <div class="text-center">
+          <h5>Our Best Menu</h5>
+          <h2>The Most Popular</h2>
+        </div>
+
+        <div class="card-list">
+          <div class="order-card">
+            <div class="card-image">
+              <img
+                src="image/AI_generated_fast_food_fresh_delicious_burger__high_quality_isolated_transparent_background-removebg-preview.png"
+                alt="">
+            </div>
+            <h4>Double Beef Burger</h4>
+            <h4 class="price">3500 MMK</h4>
+            <!-- <button class="btn btn-sm btn-primary" onclick="showMoreItems(this)">
+              View More
+            </button> -->
+            <!-- <a href="menu-detail.html?category=FriedChicken" class="btn btn-primary btn-sm">
+              View More
+            </a> -->
+            <!-- <button class="btn cart-btn" onclick="addToCart()">Add to Cart</button> -->
+            <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Double Beef Burger', 3500)">
+              Add to Cart
+            </button>
+
+
+          </div>
+
+          <div class="order-card">
+            <div class="card-image">
+              <img src="image/Spicy_Korean_Gochujang_Wings-removebg-preview.png" alt="">
+            </div>
+            <h4>Spicy Fried Chicken</h4>
+            <h4 class="price">1500 MMK</h4>
+            <!-- <button class="btn btn-sm btn-primary" onclick="showMoreItems(this)">
+              View More
+            </button> -->
+            <!-- <a href="menu-detail.html?category=FriedChicken" class="btn btn-primary btn-sm">
+              View More
+            </a> -->
+            <!-- <button class="btn cart-btn" onclick="addToCart()">Add to Cart</button> -->
+            <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Spicy Fried Chicken', 1500)">
+              Add to Cart
+            </button>
+
+
+          </div>
+
+
+          <div class="order-card">
+            <div class="card-image">
+              <img src="image/Dookki_Tteokbokki__Spicy_Rice_Cakes__560g-removebg-preview.png" alt="">
+            </div>
+            <h4>Tteokbokki</h4>
+            <h4 class="price">2500 MMK</h4>
+            <!-- <button class="btn btn-sm btn-primary" onclick="showMoreItems(this)">
+              View More
+            </button> -->
+            <!-- <a href="menu-detail.html?category=FriedChicken" class="btn btn-primary btn-sm">
+              View More
+            </a> -->
+            <!-- <button class="btn cart-btn" onclick="addToCart()">Add to Cart</button> -->
+            <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Tteokbokki', 2500)">
+              Add to Cart
+            </button>
+
+
+          </div>
+
+
+          <div class="order-card">
+            <div class="card-image">
+              <img src="image/download__2_-removebg-preview.png" alt="">
+            </div>
+            <h4>Seafood Salad</h4>
+            <h4 class="price">6000 MMK</h4>
+            <!-- <button class="btn btn-sm btn-primary" onclick="showMoreItems(this)">
+              View More
+            </button> -->
+            <!-- <a href="menu-detail.html?category=FriedChicken" class="btn btn-primary btn-sm">
+              View More
+            </a> -->
+            <!-- <button class="btn cart-btn" onclick="addToCart()">Add to Cart</button> -->
+            <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Seafood Salad', 6000)">
+              Add to Cart
+            </button>
+
+
+          </div>
+
+          <div class="order-card">
+            <div class="card-image">
+              <img
+                src="image/รูปผัดไทย_PNG___ผัดไทย_PNG___อาหารไทย__แบบไทยภาพ_PNG_และ_PSD_สำหรับดาวน์โหลดฟรี-removebg-preview.png"
+                alt="">
+            </div>
+            <h4>Thailand Salad</h4>
+            <h4 class="price">3000 MMK</h4>
+            <!-- <button class="btn btn-sm btn-primary" onclick="showMoreItems(this)">
+              View More
+            </button> -->
+            <!-- <a href="menu-detail.html?category=FriedChicken" class="btn btn-primary btn-sm">
+              View More
+            </a> -->
+            <!-- <button class="btn cart-btn" onclick="addToCart()">Add to Cart</button> -->
+            <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Thailand Food', 3000)">
+              Add to Cart
+            </button>
+
+
+          </div>
+
+          <div class="order-card">
+            <div class="card-image">
+              <img src="image/poster_design-removebg-preview.png" alt="">
+            </div>
+            <h4>Bubble Milk Tea</h4>
+            <h4 class="price">2000 MMK</h4>
+            <!-- <button class="btn btn-sm btn-primary" onclick="showMoreItems(this)">
+              View More
+            </button> -->
+            <!-- <a href="menu-detail.html?category=FriedChicken" class="btn btn-primary btn-sm">
+              View More
+            </a> -->
+            <!-- <button class="btn cart-btn" onclick="addToCart()">Add to Cart</button> -->
+            <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Bubble Milk Tea', 2000)">
+              Add to Cart
+            </button>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- View More Items (hidden by default) -->
+      <div id="more-items" class="card-list d-none">
+
+        <div class="order-card">
+          <div class="card-image">
+            <img src="image/burger2.png" alt="">
+          </div>
+          <h4>Cheese Burger</h4>
+          <h4 class="price">4000 MMK</h4>
+          <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Cheese Burger', 4000)">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="order-card">
+          <div class="card-image">
+            <img src="image/chicken2.png" alt="">
+          </div>
+          <h4>Hot Wings</h4>
+          <h4 class="price">2800 MMK</h4>
+          <button class="btn btn-outline-danger btn-sm" onclick="addToCart('Hot Wings', 2800)">
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- end menu section -->
+
+    <!-- start review section -->
+    <section>
+      <div class="wrapper p-top">
+        <div class="text-center">
+          <h5>Our Service</h5>
+          <h2>How does it work?</h2>
+        </div>
+
+        <div class="flex text-center">
+          <div class="service-card">
+            <div class="images-container">
+              <img src="image/sale2-removebg-preview.png" alt="">
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Delivery that is always online even faster.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="images-container">
+              <img src="image/sale-removebg-preview.png" alt="">
+            </div>
+            <h3>24Hours Services</h3>
+            <p>Enjoy our all-day, all-night food delivery service.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="images-container">
+              <img src="image/Packaging_design_The_Window_-_Branding_by_Ten10-removebg-preview.png" alt="">
+            </div>
+            <h3>Best Packaging Design</h3>
+            <p>Add the best quality of packaging with all of our love</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- review section start -->
+    <section class="reviews">
+      <h2 class="review-title">What Our Customers Say</h2>
+
+      <div class="review-scroll">
+        <div class="review-card">
+          <p>“Food was very fresh. Love the fast delivery!”</p>
+          <h4>Yuko</h4>
+        </div>
+
+        <div class="review-card">
+          <p>“Tastes amazing! Will definitely order again.”</p>
+          <h4>EunJi</h4>
+        </div>
+
+        <div class="review-card">
+          <p>“Affordable price and great service!”</p>
+          <h4>Hnin Yuu</h4>
+        </div>
+
+        <div class="review-card">
+          <p>“Very delicious, my family enjoyed it!”</p>
+          <h4>Yadanar</h4>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- review section end -->
+
+    <!-- about section start -->
+    <section class="about-home">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+          We are a fast-growing food delivery service that focuses on
+          fresh meals, quick delivery, and excellent customer experience.
+          Our team works 24/7 to bring delicious food right to your door.
+        </p>
+        <a href="aboutus.html" class="about-btn">Read More</a>
+      </div>
+
+      <div class="about-image">
+        <img src="image/삼첩분식X요기요 로제떡볶이 4천원 할인.jfif" alt="About Food Delivery">
+      </div>
+    </section>
+
+    <!-- about section end -->
+
+    <!-- footer section start -->
+    <footer class="footer">
+      <div class="footer-container">
+
+        <div class="footer-section">
+          <h3>Food Delivery</h3>
+          <p>Your favorite meals delivered fast and fresh every day!</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Order</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: soeyadanar20033110@gmail.com</li>
+            <li>Phone: +959 942586790</li>
+            <li>Yangon, Myanmar</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 yadanar. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- footer section end -->
+  </main>
+
+  <!-- end review section -->
+
+  <script>
+    const foods = [
+      "Fried Chicken",
+      "Milk Tea",
+      "Thai Food",
+      "Korean Food",
+      "Burger",
+      "Pizza",
+      "Sandwich",
+      "Hotdog",
+      "Coffee",
+      "Ice Cream"
+    ];
+
+    const searchInput = document.getElementById("searchInput");
+    const searchBox = document.getElementById("searchResult");
+
+    searchInput.addEventListener("keyup", function () {
+      let keyword = this.value.toLowerCase();
+      searchBox.innerHTML = "";
+
+      if (keyword.trim() === "") {
+        searchBox.style.display = "none";
+        return;
+      }
+
+      let filtered = foods.filter(food =>
+        food.toLowerCase().includes(keyword)
+      );
+
+      if (filtered.length === 0) {
+        searchBox.innerHTML = `<div class="search-item">No results found</div>`;
+      } else {
+        filtered.forEach(item => {
+          let div = document.createElement("div");
+          div.classList.add("search-item");
+          div.textContent = item;
+          searchBox.appendChild(div);
+        });
+      }
+
+      searchBox.style.display = "block";
+    });
+
+    // hide box when clicked outside
+    document.addEventListener("click", function (e) {
+      if (!searchInput.contains(e.target)) {
+        searchBox.style.display = "none";
+      }
+    });
+  </script>
+
+
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      const item = cart.find(i => i.name === name);
+
+      if (item) {
+        item.qty++;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+
+      updateCart();
+    }
+
+    function increaseQty(index) {
+      cart[index].qty++;
+      updateCart();
+    }
+
+    function decreaseQty(index) {
+      if (cart[index].qty > 1) {
+        cart[index].qty--;
+      } else {
+        cart.splice(index, 1);
+      }
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById("cart-items");
+      const cartCount = document.getElementById("cart-count");
+      const cartTotal = document.getElementById("cart-total");
+
+      cartItems.innerHTML = "";
+      let total = 0;
+      let count = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `<p class="text-muted">No items in cart</p>`;
+        cartCount.innerText = 0;
+        cartTotal.innerText = 0;
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        count += item.qty;
+
+        cartItems.innerHTML += `
+        <div class="mb-2 border-bottom pb-2">
+          <small>${item.name}</small><br>
+          <small class="text-danger">
+            ${item.price} x ${item.qty} = ${item.price * item.qty} MMK
+          </small>
+
+          <div class="d-flex align-items-center mt-1">
+            <button class="btn btn-sm btn-outline-secondary me-1"
+                    onclick="decreaseQty(${index})">−</button>
+
+            <span>${item.qty}</span>
+
+            <button class="btn btn-sm btn-outline-secondary ms-1"
+                    onclick="increaseQty(${index})">+</button>
+          </div>
+        </div>
+      `;
+      });
+
+      cartCount.innerText = count;
+      cartTotal.innerText = total;
+    }
+  </script>
+
+  <script>
+    function showMoreItems(btn) {
+      const moreItems = document.getElementById("more-items");
+
+      moreItems.classList.remove("d-none");
+      btn.style.display = "none"; // View More button ပျောက်
+    }
+  </script>
+
+<script>
+  const allMenuItems = [
+    { name: "Fried Chicken Wings", price: 2500, category: "FriedChicken", img: "image/chicken.png" },
+    { name: "Spicy Fried Chicken", price: 2800, category: "FriedChicken", img: "image/chicken2.png" },
+    { name: "Bubble Milk Tea", price: 2000, category: "MilkTea", img: "image/milktea.png" },
+    { name: "Thai Tea", price: 1800, category: "MilkTea", img: "image/thaitea.png" },
+    { name: "Pad Thai", price: 3000, category: "ThaiFood", img: "image/padthai.png" },
+    { name: "Tom Yum Soup", price: 3200, category: "ThaiFood", img: "image/tomyum.png" }
+  ];
+  
+  const menuContainer = document.querySelector(".card-list");
+  
+  // Render function
+  function renderMenu(category) {
+    menuContainer.innerHTML = "";
+    const filtered = allMenuItems.filter(i => i.category === category);
+    filtered.forEach(item => {
+      const div = document.createElement("div");
+      div.classList.add("order-card");
+      div.innerHTML = `
+        <div class="card-image">
+          <img src="${item.img}" alt="${item.name}">
+        </div>
+        <h4>${item.name}</h4>
+        <h4 class="price">${item.price} MMK</h4>
+        <button class="btn btn-outline-danger btn-sm" onclick="addToCart('${item.name}', ${item.price})">Add to Cart</button>
+      `;
+      menuContainer.appendChild(div);
+    });
+  }
+  
+  // Dropdown click
+  document.querySelectorAll(".dropdown-item[data-category]").forEach(item => {
+    item.addEventListener("click", function(e){
+      e.preventDefault();
+      const category = this.getAttribute("data-category");
+      renderMenu(category);
+    });
+  });
+  
+ 
+  </script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

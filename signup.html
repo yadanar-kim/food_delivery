@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 35px 40px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .20);
+    color: #fff;
+}
+
+
+
+        .wrapper h1 {
+            font-size: 34px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 52px;
+            margin: 20px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-radius: 40px;
+            outline: none;
+            padding: 0 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 48px;
+            border-radius: 40px;
+            border: none;
+            background: #fff;
+            color: #333;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .toggle-link a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .main-content {
+    min-height: calc(100vh - 350px); /* footer height ခန့်မှန်း */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+        /* footer section start */
+        .footer {
+            background: linear-gradient(135deg, #ffccdf, #ffe9d0);
+            padding: 60px 10%;
+            margin-top: auto;
+            /* ⭐ အောက်ဆုံးပို့ */
+            border-radius: 25px 25px 0 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 28px;
+            color: #d03a77;
+            margin-bottom: 10px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #b02f60;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p,
+        .footer-section ul li {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section a {
+            color: #b02f60;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ff3a80;
+        }
+
+        /* Social Icons */
+        .footer-social a {
+            font-size: 22px;
+            margin-right: 12px;
+            color: #b02f60;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #ff3a80;
+        }
+
+        /* Bottom copyright */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 20px;
+            border-top: 1px solid #f4b8d3;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+
+        /* footer section end */
+
+        .back-home {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.back-home a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.back-home a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <main class="main-content">
+        <div class="wrapper" id="formBox">
+
+            <!-- DEFAULT: LOGIN FORM -->
+            <h1 id="formTitle">Login</h1>
+    
+            <div id="loginForm">
+    
+                <div class="input-box">
+                    <input type="text" placeholder="Username">
+                    <i class='bx bxs-user'></i>
+                </div>
+    
+                <div class="input-box">
+                    <input type="password" placeholder="Password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <button class="btn">Login</button>
+    
+                <div class="toggle-link">
+                    <p>Don't have an account?
+                        <a onclick="showRegister()">Register</a>
+                    </p>
+                </div>
+    
+                
+            </div>
+            <div class="back-home">
+                <a href="index.html">
+                    <i class='bx bx-arrow-back'></i> Back to Home
+                </a>
+            </div>
+            
+    
+            <!-- REGISTER FORM (hidden first) -->
+            <div id="registerForm" style="display:none;">
+    
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name">
+                    <i class='bx bxs-user'></i>
+                </div>
+    
+                <div class="input-box">
+                    <input type="email" placeholder="Email">
+                    <i class='bx bxs-envelope'></i>
+                </div>
+    
+                <div class="input-box">
+                    <input type="password" placeholder="Password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <button class="btn">Register</button>
+    
+                <div class="toggle-link">
+                    <p>Already have an account?
+                        <a onclick="showLogin()">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <script>
+        function showRegister() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+            document.getElementById("formTitle").innerText = "Register";
+        }
+
+        function showLogin() {
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("formTitle").innerText = "Login";
+        }
+    </script>
+
+
+    <!-- footer section start -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>Food Delivery</h3>
+                <p>Your favorite meals delivered fast and fresh every day!</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="">Email: soeyadanar20033110@gmail.com</a></li>
+                    <li>Phone: +959 942586790</li>
+                    <li>Yangon, Myanmar</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="www.tiktok.com/@s_y_d03"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 yadanar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

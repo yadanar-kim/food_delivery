@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Food Delivery</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+    }
+
+    .contact-header h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* Main container */
+    .contact-container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Left info */
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      color: #d03a77;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .info-item i {
+      font-size: 20px;
+      color: #d03a77;
+      margin-right: 12px;
+    }
+
+    /* Social */
+    .social-icons a {
+      display: inline-block;
+      margin-right: 12px;
+      font-size: 22px;
+      color: #d03a77;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff3a80;
+    }
+
+    /* Form */
+    .contact-form {
+      flex: 1;
+    }
+
+    .contact-form h3 {
+      color: #d03a77;
+      margin-bottom: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .contact-form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background: #d03a77;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #b52f65;
+    }
+
+    /* Back Home Button */
+    .back-home {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #fff;
+      color: #d03a77;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .back-home a:hover {
+      background: #ffe1ea;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+
+    /* footer section start */
+.footer {
+  background: linear-gradient(135deg, #ffccdf, #ffe9d0);
+  padding: 60px 10%;
+  margin-top: 50px;
+  border-radius: 25px 25px 0 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section h3 {
+  font-size: 28px;
+  color: #d03a77;
+  margin-bottom: 10px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #b02f60;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul li {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #b02f60;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ff3a80;
+}
+
+/* Social Icons */
+.footer-social a {
+  font-size: 22px;
+  margin-right: 12px;
+  color: #b02f60;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff3a80;
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  margin-top: 20px;
+  border-top: 1px solid #f4b8d3;
+}
+
+.footer-bottom p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}
+
+/* footer section end */
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="contact-header">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Get in touch anytime!</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+
+      <div class="info-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Yangon, Myanmar</span>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>+959 942586790</span>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>soeyadanar20033110@gmail.com</span>
+      </div>
+
+      <h3 style="margin-top:25px;">Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h3>Send Message</h3>
+
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Back to Home -->
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+
+  <!-- footer section start -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h3>Food Delivery</h3>
+        <p>Your favorite meals delivered fast and fresh every day!</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Order</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: soeyadanar20033110@gmail.com</li>
+          <li>Phone: +959 942586790</li>
+          <li>Yangon, Myanmar</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 yadanar. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- footer section end -->
+
+</body>
+</html>
